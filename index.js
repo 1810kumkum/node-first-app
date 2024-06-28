@@ -67,7 +67,7 @@ app.set("view engine", "ejs");
 const isAuthenticated = async (req, res, next) => {
   const { token } = req.cookies;
   if (token) {
-    const decoded = jwt.verify(token, "shdhuskafaskhfufjue");
+    const decoded = jwt.verify(token, "sdjasdbajsdbjasd");
     req.user = await User.findById(decoded._id);
     next();
   } else {
@@ -132,13 +132,13 @@ app.get("/register", (req, res) => {
 // });
 
 //instead of chaining using then we can use async and await:
-app.get("/add", async (req, res) => {
-  await Message.create({
-    name: "Saraswati Kumari",
-    email: "saras252k@getMaxListeners.com",
-  });
-  res.send("Nice");
-});
+// app.get("/add", async (req, res) => {
+//   await Message.create({
+//     name: "Saraswati Kumari",
+//     email: "saras252k@getMaxListeners.com",
+//   });
+//   res.send("Nice");
+// });
 // app.get("/users", (req, res) => {
 //   res.json({
 //     users,
